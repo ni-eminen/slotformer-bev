@@ -1,0 +1,44 @@
+INFO: training model in bev_slots task!
+DATASET
+0
+DATASET
+DATASET
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msavi_bev_params[0m at: [34mhttps://wandb.ai/matias_/SlotFormer/runs/e86pqmgu[0m
+INFO: training model in bev_slots task!
+Scenario nums: 0
+Scenario nums: 0
+DATASET
+0
+DATASET
+DATASET
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msavi_bev_params[0m at: [34mhttps://wandb.ai/matias_/SlotFormer/runs/gjm52kyl[0m
+INFO: training model in bev_slots task!
+Scenario nums: 0
+Scenario nums: 0
+DATASET
+INFO: training model in bev_slots task!
+Scenario nums: 0
+Scenario nums: 0
+DATASET
+<class 'slotformer.bev_slots.datasets.bevdataset.CarlaVoiceDataset'>
+DATASET
+DATASET
+INFO: training model in bev_slots task!
+Scenario nums: 0
+Scenario nums: 0
+DATASET
+<class 'slotformer.bev_slots.datasets.bevdataset.CarlaVoiceDataset'>
+DATASET
+DATASET
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msavi_bev_params[0m at: [34mhttps://wandb.ai/matias_/SlotFormer/runs/0eqbfedk[0m
+INFO: training model in bev_slots task!
+Scenario nums: 0
+Scenario nums: 0
+DATASET
+DATASET
+DATASET
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msavi_bev_params[0m at: [34mhttps://wandb.ai/matias_/SlotFormer/runs/p3hn6x6x[0m
