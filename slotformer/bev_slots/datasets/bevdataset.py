@@ -4,7 +4,7 @@ import copy
 import re
 import logging
 from pathlib import Path
-
+from contextlib import redirect_stdout
 import json
 import numpy as np
 import torch
@@ -179,6 +179,12 @@ class CarlaVoiceDataset(BaseIODataset):
         return data
 
     def __getitem__(self, idx):
+        with open("out.txt", "w") as f:
+            with redirect_stdout(f):
+                print("LENGTH OF DATASET")
+                print(self.__len__())
+                print("INDEX VALUE", flush=True)
+                print(idx, flush=True)
         info = self.scenario_infos[idx]
         route_path = info['route_path']
         route_frames = int(info['route_frames'])

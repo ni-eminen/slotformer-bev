@@ -1,0 +1,10 @@
+pip install torchmetrics==0.10.0
+pip install datasets
+
+cd nerv
+pip install -e .
+pip install pycocotools scikit-image lpips
+pip install einops==0.3.2
+pip install phyre==0.2.2
+cd ..
+pip install -e .

@@ -10,12 +10,12 @@ def create_carla_dataset(
     root, towns, weathers=None, waypoints_seq_len=5, batch_size=None, **kwargs
 ):
     ds = CarlaVoiceDataset(
-                dataset_root="/home/matias/slotformer/data/bev",
+                dataset_root="/scratch/project_2014099/data-lmdrive/data/test-dataset",
                 towns=None,
                 weathers=None,
                 scale=None,
                 enable_start_frame_augment=True,
-                token_max_length=2, # THESIS: this is 40 in the original
+                token_max_length=7, # THESIS: this is 40 in the original
                 enable_notice=True,
         )
     return ds
@@ -23,7 +23,7 @@ def create_carla_dataset(
 def build_dataset(params, val_only=False):
     dst = params.dataset
     dataset_train = create_carla_dataset(
-        root="/home/matias/slotformer/data/bev",
+        root="",
         towns=None,
         weathers=None,
         batch_size=24,

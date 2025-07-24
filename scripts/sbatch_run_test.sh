@@ -36,9 +36,9 @@ mkdir -p $LOG_DIR
 if [[ $DDP == "ddp" ]];
 then
   PORT=$((29501 + $RANDOM % 100))  # randomly select a port
-  PYTHON="python -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT"
+  PYTHON="python -u -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT"
 else
-  PYTHON="python"
+  PYTHON="python -u"
 fi
 
 # write to new file
@@ -46,23 +46,13 @@ echo "#!/bin/bash
 
 # set up SBATCH args
 #SBATCH --account=project_2014099
-#SBATCH --cpus-per-task=10
-#SBATCH --mem-per-cpu=0
-#SBATCH --gres=gpu:a100:4
-#SBATCH --time=24:00:00
 #SBATCH --job-name=$SLRM_NAME
-#SBATCH --output=$LOG_FILE
-#SBATCH --error=$LOG_FILE
-#SBATCH --open-mode=append
 #SBATCH --partition=$PARTITION                       # self-explanatory, set to your preference (e.g. gpu or cpu on MaRS, p100, t4, or cpu on Vaughan)
-#SBATCH --cpus-per-task=$CPUS_PER_TASK               # self-explanatory, set to your preference
+#SBATCH --cpus-per-task=10               # self-explanatory, set to your preference
 #SBATCH --ntasks=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem-per-cpu=${MEM_PER_CPU}G                # self-explanatory, set to your preference
-#SBATCH --gres=gpu:$GPUS                             # NOTE: you need a GPU for CUDA support; self-explanatory, set to your preference 
-#SBATCH --nodes=1
-#SBATCH --qos=$QOS                                   # for 'high' and 'deadline' QoS, refer to https://support.vectorinstitute.ai/AboutVaughan2
-#SBATCH --time=$TIME                                 # running time limit, 0 as unlimited
+#SBATCH --mem-per-cpu=0                # self-explanatory, set to your preference
+#SBATCH --gres=gpu:a100:2                             # NOTE: you need a GPU for CUDA support; self-explanatory, set to your preference 
+#SBATCH --time=00:15:00                                 # running time limit, 0 as unlimited
 
 # log some necessary environment params
 echo \$SLURM_JOB_ID >> $LOG_FILE                      # log the job id

@@ -5,7 +5,7 @@ class SlotFormerParams(BaseParams):
     project = 'SlotFormer'
 
     # training settings
-    gpus = 4  # 2 GPUs should also be good # THESIS: gpu amount
+    gpus = 2  # 2 GPUs should also be good # THESIS: gpu amount
     max_epochs = 30  # ~80k steps
     save_interval = 0.2  # save every 0.2 epoch
     eval_interval = 2  # evaluate every 2 epochs
@@ -27,7 +27,7 @@ class SlotFormerParams(BaseParams):
     video_len = 50  # take the first 50 frames of each video
     train_batch_size = 16 #64 // gpus
     val_batch_size = train_batch_size * 2
-    num_workers = 8
+    num_workers = 8 # THESIS: changed to 0 from 8
 
     # model configs
     model = 'StoSAVi'  # we actually use the deterministic version here # THESIS: we want to use the stochastic version
